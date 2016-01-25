@@ -5,22 +5,50 @@
     <title>Guessing game</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+       //**('a') runs first
         $(document).ready(function(){
-            var the_number = null;
-            function pick_number(){
-                var random_number = Math.floor((Math.random() * 10) + 1);
-                return random_number;
-            }
-        })
+           //** 'b' runs 6th
+          $('button').click(make_guess);
+            the_number= pick_number();
+            // c-runs last
+        });
+        var the_number = null;
+        //**'d' runs second
+        function pick_number(){
+            // e runs 7th
+            var random_number = Math.floor((Math.random() * 10) + 1);
+            //console.log(random_number);
+            return random_number;
+        }
 
+       //**'f' runs third
+        function make_guess() {
+            var the_guess = $('#guess_input').val();
+        //'g'didn't run
+            if (the_guess > the_number) {
+                $('#response_div').text('Too High!');
+            }
+
+            else if(the_guess<the_number) {
+                $('#response_div').text('Too Low!');
+            }
+
+            else{
+                $('#response_div').text('You Guessed it!');
+            }
+        }
+        //'h' runs fourth
     </script>
 </head>
-<body onload="">
+<body>
 <input type="number" id="guess_input">
 
 <div id="response_div"></div>
 
-<button type="submit" onclick="">submit</button>
+<button type="submit">submit</button>
 
 </body>
+<script>
+    // 'i' runs fifth
+</script>
 </html>
