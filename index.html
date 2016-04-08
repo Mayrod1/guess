@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>guessing game</title>
+    <style>
+        div{
+            border: solid 1px black;
+            height: 80px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>
+        var the_number = null;
+
+        function pick_number(){
+            var random_number;
+            Math.floor((Math.random() * 10) + 1);
+            return random_number;
+        }
+
+        $("button").click(make_guess());
+
+        function make_guess(){
+
+        }
+    </script>
+</head>
+<body onload="pick_number()">
+<input type="text" id="guess_input">
+
+<button type="submit">Submit</button>
+
+<div id="response_div"></div>
+
+</body>
+</html>
