@@ -7,31 +7,59 @@
         div{
             border: solid 1px black;
             height: 80px;
+            width: 250px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script>
+
         var the_number = null;
 
-        function pick_number(){
-            var random_number;
-            Math.floor((Math.random() * 10) + 1);
+
+        function make_guess(){
+        console.log("make guess function running");
+            if($("#guess_input").val()==''){
+                $("#response_div").text("Input can not be left blank!")
+            }
+            else {
+                var the_guess = $("#guess_input").val();
+
+                if (the_guess > the_number) {
+                    $("#response_div").text("Too High!")
+                }
+                else if (the_guess < the_number) {
+                    $("#response_div").text("Too Low!")
+                }
+                else if (the_guess == the_number) {
+                    $("#response_div").text("you guessed it!")
+                }
+                else {
+                    $("#response_div").text("Number is out of range")
+
+                }
+            }
+        }
+        function pick_number() {
+            var random_number = Math.floor((Math.random() * 10) + 1);
             return random_number;
         }
 
-        $("button").click(make_guess());
+        $(document).ready(function () {
+            $("button").click(function(){
+                console.log('button was clicked');
+                make_guess();
+            });
+            the_number = pick_number()
+        });
 
-        function make_guess(){
-
-        }
     </script>
 </head>
-<body onload="pick_number()">
+<body>
 <input type="text" id="guess_input">
 
 <button type="submit">Submit</button>
 
-<div id="response_div"></div>
+<div id="response_div">Guess a number from 1-10</div>
 
 </body>
 </html>
