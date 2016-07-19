@@ -1,0 +1,49 @@
+#response_div{
+    height: 10%;
+    position: absolute;
+    left: 18%;
+    top: 15%;
+    color:  #cc0000;
+    font-size: 1.4em;
+    font-family: 'Orbitron', sans-serif;
+}
+#container{
+    position: absolute;
+    height: 40%;
+    width: 35%;
+    left: 33%;
+    top:27%;
+    background-position: center;
+    border-radius: 10%;
+    background-color: black;
+    opacity: 0.9;
+    margin: 0;
+}
+body{
+    background-image: url("images/matrix_background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+input{
+    position: absolute;
+    top: 35%;
+    left: 41%;
+}
+button[type=reset]{
+    background-color: darkred;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    top:65%;
+    position: absolute;
+    left: 52%;
+}
+button[type=submit]{
+    background-color: darkred;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    top:65%;
+    position: absolute;
+    left: 30%;
+}
